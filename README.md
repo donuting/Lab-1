@@ -48,7 +48,7 @@ The markdown format is commonly used for things like readme files, as they allow
 which allows for basic typesetting when viewed while still being a plaintext format.
 
 Below is a blank checkbox:
-- [ ] Put an X in the [ ] to mark this as done!
+- [X] Put an X in the [ ] to mark this as done!
 
 You can edit this file directly to check off these checkboxes throughout the lab to mark things as done.
 Do so now for the checkbox above.
@@ -60,7 +60,7 @@ And now, back to Fizz Buzz!
 Fizz Buzz is a game where people sit in a circle. Counting from 1 and going around the circle,
 people say one of four things for a number `i`: `Fizz`, `Buzz`, `Fizz Buzz`, or `i`.
 
-- [ ] Try a short game of Fizz Buzz with a small group of people around you!
+- [X] Try a short game of Fizz Buzz with a small group of people around you!
 
 Formally as a coding task, let `i` be a positive integer and output the following:
 
@@ -93,34 +93,38 @@ Let's explore a solution written in Java.
  */
 class FizzBuzz {
 
-    public static void main(String[] args) {
+   public static void main(String[] args) {    // actual classic
 
-        for (int i = 1; i < 100; i++) {
+      for (int i = 1; i < 100; i++) {
 
-            // Find out which numbers divide i.
-            boolean divisibleBy3 = i % 3 == 0;
-            boolean divisibleBy5 = i % 5 == 0;
+         extracted(i);
+      }
+   }
 
-            // Print our appropriate result.
-            if (divisibleBy3 && divisibleBy5) {
+   private static void extracted(int i) {
+      // Find out which numbers divide i.
+      boolean divisibleBy3 = i % 3 == 0;
+      boolean divisibleBy5 = i % 5 == 0;
 
-                System.out.println("Fizz Buzz");
+      // Print our appropriate result.
+      if (divisibleBy3 && divisibleBy5) {
 
-            } else if (divisibleBy3) {
+         System.out.println("Fizz Buzz");
 
-                System.out.println("Fizz");
+      } else if (divisibleBy3) {
 
-            } else if (divisibleBy5) {
+         System.out.println("Fizz");
 
-                System.out.println("Buzz");
+      } else if (divisibleBy5) {
 
-            } else {
+         System.out.println("Buzz");
 
-                System.out.println(i);
+      } else {
 
-            }
-        }
-    }
+         System.out.println(i);
+
+      }
+   }
 }
 ```
 
@@ -142,12 +146,15 @@ the code are doing. For example, what's the Java version of Python's `and`? What
 on with that weird `for` loop? As you do this, you might find it useful to write down your
 own implementation in Python to help you begin to create a mapping between the two languages.
 
-- [ ] Make note of any specific Java syntax which stands out to you and compare what you
+- [X] Make note of any specific Java syntax that stands out to you and compare what you
 come up with those around you. Try to come up with a list of at least five things that
 strike you as either similar to or different from Python.
 
 Tip: IntelliJ works just like PyCharm, so you can place breakpoints and step through the code using the debugger in the same way.
 You might find it informative to try stepping through the code to see what it is doing on a few iterations.
+
+Some interesting ideas I found - classic public static void main(String[] args). lets go i clutched
+up with that. big brain, hella big brain.
 
 ## The Main Function
 
@@ -170,6 +177,8 @@ Later in this course, you'll learn what all that mess means, but for now it is e
 - [ ] You've puzzled through how Java `for` and `if` statements work; now rewrite this
 to use a `while` loop instead of a `for` loop.
 
+just change to while i < 100 / input value
+
 ## How to test this code
 
 How do you know that it's correct? Part of the problem here is that we can't
@@ -183,6 +192,7 @@ test the calculation for several interesting numbers more easily.
 line or the closing brace `}` of the loop.
 
 2. Now select menu item `Refactor —> Extract/Introduce —> Method…`
+WOW I REALLY NEEDED TO GO ON YOUTUBE TO FIND A SHORCUT CTRL ALT SHIFT T AND THAT IS THE ONLY WAY IT WORKS LIKE BRO
 
 3. Immediately, type the method name you want, maybe something like `doFizzBuzz`.
 
